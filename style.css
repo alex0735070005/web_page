@@ -13,10 +13,19 @@ body, ul {
     padding: 0;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 .container {
     max-width: 1000px;
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -35,10 +44,6 @@ header ul li a:hover {
     background: #423c3ce8;
 }
 
-header ul li {
-    list-style: none;
-}
-
 header ul {
     display: flex;
     justify-content: space-between;
@@ -50,21 +55,133 @@ header ul {
     max-width: 70px;
 }
 
+#sidebar {
+    width: 23%;
+}
 
+#content {
+    width: 75%;
+}
 
+#main {
+    align-items: flex-start;
+}
 
+#sidebar, #content {
+    margin: 15px 0;
+    box-shadow: 0 0 5px 2px #00000042;
+    padding: 15px;
+}
 
+#sidebar ul li a {
+    display: block;
+    padding: 10px 0px;
+    color: black;
+    border-bottom: 1px dashed black;
+}
+
+#sidebar ul li a:hover {
+    color: #a3c639;
+    border-color: #a3c639;
+}
+
+#sidebar ul li:last-child a {
+    border: none;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    width: 23%;
+    box-shadow: 0 0 5px 1px #0000004f;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.product:hover {
+    -moz-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+    box-shadow: 0 0 5px 1px #00000087;
+}
+
+.product h2 {
+    margin: 0 0 15px 0;
+}
+
+.product img {
+    max-width: 100%;
+}
+
+.p-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.p-bottom button {
+    background: #a3c639;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.p-bottom span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.p-bottom button:hover {
+    background: #809936;
+}
+
+@media(max-width: 960px) {
+    .product {
+        width: 32%;
+    }
+}
 
 @media(max-width: 725px) {
-    header .container {       
+    header .container {
         flex-wrap: wrap;
         justify-content: center;
     }
-
     header ul {
         width: 100%;
         margin-top: 25px;
         flex-direction: column;
+        text-align: center;
+    }
+
+    .product {
+        width: 48%;
+    }
+
+    #sidebar {
+        width: 33%;
+    }
+
+    #content {
+        width: 65%;
+    }
+}
+
+
+@media(max-width: 570px) {
+    #sidebar {
+        width: 100%;
+    }
+
+    #content {
+        width: 100%;
+    }
+
+    #sidebar, #content {
         text-align: center;
     }
 }
